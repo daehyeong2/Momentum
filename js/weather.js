@@ -14,7 +14,15 @@ function onGeoOk(position){
         }));
 }
 function onGeoError(){
-    alert("Can't find you. No weather for you.")
+    const weather = document.querySelector("#weather span:first-child");
+    const city = document.querySelector("#weather span:last-child");
+    const error = document.createElement("i");
+    error.className = "fa-solid fa-triangle-exclamation";
+
+    weather.innerText = "Unable to load weather";
+
+    city.innerText = "";
+    city.append(error);
 }
 
 navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);

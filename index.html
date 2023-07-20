@@ -9,21 +9,30 @@
 </head>
 
 <body>
-    <form id="login-form" class="hidden">
-        <input required maxlength="20" type="text" placeholder="What is your name?" />
-        <input type="submit" value="Log In" />
-    </form>
-    <h1 id="greeting" class="hidden"></h1>
-    <h2 id="clock">00:00:00</h2>
-    <form id="todo-form">
-        <input type="text" placeholder="Write a To Do and Press Enter" required />
-    </form>
-    <ul id="todo-list"></ul>
-    <div id="quote">
-        <span></span>
-        <span></span>
-    </div>
     <div id="weather">
+        <span><i class="fa-solid fa-spinner fa-spin-pulse"></i></span>
+        <span>Loading...</span>
+    </div>
+
+    <div id="main">
+        <form id="login-form" class="hidden">
+            <input required maxlength="20" type="text" placeholder="What is your name?" />
+        </form>
+
+        <span id="greeting" class="hidden">
+            <span>Hello,</span>
+            <span></span>
+        </span>
+
+        <h2 id="clock">00:00:00</h2>
+
+        <form id="todo-form">
+            <input type="text" placeholder="Write a To Do" required />
+        </form>
+
+        <ul id="todo-list"></ul>
+    </div>
+    <div id="quote">
         <span></span>
         <span></span>
     </div>
@@ -33,6 +42,11 @@
     <script src="js/background.js"></script>
     <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>
+    <script src="https://kit.fontawesome.com/18c154b14c.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@200&display=swap" rel="stylesheet">
 </body>
 
 </html>

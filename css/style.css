@@ -1,3 +1,20 @@
+@import "main.css";
+@import "weather.css";
+@import "quote.css";
+
+
+html, body{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Song Myung', serif;
+    font-weight: 600;
+}
+body{
+    background-size: 100% 100%  ;
+    background-repeat: no-repeat;
+}
 .hidden{
     display: none;
 }

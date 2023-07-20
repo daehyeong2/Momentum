@@ -1,0 +1,15 @@
+@keyframes FadeInWeather{
+    from{
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to{
+        opacity: 1;
+        transform: none;
+    }
+}
+#weather {
+    position: absolute;
+    right: 0;
+    animation: FadeInWeather .5s ease-in-out;
+}

@@ -1,0 +1,45 @@
+#quote{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 5px;
+}
+@keyframes FadeInQuote{
+    from{
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to{
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes FadeInAuthor{
+    from{
+        opacity: 0;
+        transform: translateX(-25px);
+    }
+    to{
+        opacity: 1;
+        transform: none;
+    }
+}
+#quote span{
+    opacity: 0;
+    animation-delay: .5s;
+}
+#quote span:first-child{
+    font-size: 20px;
+    text-shadow: -1px 0px white, 0px 1px white, 1px 0px white, 0px -1px white;
+    animation: FadeInQuote .8s ease-in-out forwards;
+}
+#quote span:last-child{
+    font-size:19;
+    color: whitesmoke;
+    text-shadow: -1px 0px black, 0px 1px black, 1px 0px black, 0px -1px black;
+    animation: FadeInAuthor .5s ease-in-out forwards;
+    animation-delay: 1.3s;
+}

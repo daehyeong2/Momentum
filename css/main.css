@@ -1,0 +1,49 @@
+#main{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+@keyframes FadeInGreeting{
+    from{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to{
+        opacity: 1;
+        transform: none;
+    }
+}
+#greeting{
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+#greeting span{
+    display: inline-block;
+    opacity: 0;
+    animation: FadeInGreeting .5s ease-in-out forwards;
+}
+#greeting span:first-child{
+    text-shadow: -1px 5px darkgrey, 0px 3px darkgrey, 1px 0px darkgrey, 0px -1px darkgrey;
+}
+#greeting span:last-child{
+    text-shadow: -1px 5px lightgrey, 0px 3px lightgrey, 1px 0px lightgrey, 0px -1px lightgrey;
+    animation-delay: .07s;
+}
+@keyframes FadeInClock{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+#clock {
+    margin: 0;
+    font-size: 50px;
+    font-family: 'Hahmlet', serif;
+    text-shadow: -1px 0px lightgrey, 0px 1px lightgrey, 1px 0px lightgrey, 0px -1px lightgrey;
+    animation: FadeInClock 1.5s ease-in-out;
+}
