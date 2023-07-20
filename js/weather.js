@@ -14,6 +14,7 @@ function onGeoOk(position){
         }));
 }
 function onGeoError(){
+<<<<<<< Updated upstream
     const weather = document.querySelector("#weather span:first-child");
     const city = document.querySelector("#weather span:last-child");
     const error = document.createElement("i");
@@ -23,6 +24,9 @@ function onGeoError(){
 
     city.innerText = "";
     city.append(error);
+=======
+    alert("Can't find you. No weather for you.")
+>>>>>>> Stashed changes
 }
 
 navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
