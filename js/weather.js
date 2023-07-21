@@ -23,7 +23,6 @@ function onGeoError(){
 
     city.innerText = "";
     city.append(error);
-    alert("Can't find you. No weather for you.")
 }
 
 navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
