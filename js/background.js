@@ -13,7 +13,7 @@ const images = [
 
 function paintBackgroundImage(){
     if(localStorage.getItem(CURRENTBACKGROUND__KEY)===null){
-        localStorage.setItem(CURRENTBACKGROUND__KEY, -1);
+        localStorage.setItem(CURRENTBACKGROUND__KEY, 0);
     }
     chosenNumber = (Number(localStorage.getItem(CURRENTBACKGROUND__KEY))+1)%images.length;
     localStorage.setItem(CURRENTBACKGROUND__KEY, chosenNumber)
