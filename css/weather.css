@@ -21,6 +21,7 @@
 #weather__info{
     position: relative;
     display: flex;
+    transform: translateY(-14px);
 }
 .box{
     width: 130px;
@@ -33,7 +34,7 @@
     align-items: center;
 }
 #loading{
-    margin-top: 23px;
+    margin-top: 11px;
 }
 @keyframes FadeInBackground{
     from{
@@ -46,13 +47,16 @@
 #weather__background{
     display:flex;
     position:absolute;
-    top: 12px;
+    top: 0;
     right: 0;
     width: 140px;
     height: 55px;
     background-color: rgba(156,156,156, 0.6);
-    border-radius: 35% 0% 0% 35%;
+    border-radius: 0% 0% 0% 50%;
     z-index: -1;
     border: 1px solid black;
     animation: FadeInBackground .6s ease-in-out;
+}
+#error i{
+    margin: 0;
 }

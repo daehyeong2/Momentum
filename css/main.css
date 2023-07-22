@@ -47,3 +47,34 @@
     text-shadow: -1px 0px lightgrey, 0px 1px lightgrey, 1px 0px lightgrey, 0px -1px lightgrey;
     animation: FadeInClock 1.5s ease-in-out;
 }
+#buttons{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+#buttons button{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+#buttons button:active{
+    background-color: lightyellow;
+}
+.allow{
+    background-color: bisque;
+}
+@keyframes shake {
+    25%{
+        transform: translateX(2px);
+    }
+    50%{
+        transform: translateX(-2px);
+    }
+    75%{
+        transform: translateX(2px);
+    }
+    100%{
+        transform: none;
+    }
+  }

@@ -26,7 +26,7 @@ function onGeoError(){
     error.className = "fa-solid fa-triangle-exclamation";
     loading.remove();
 
-    errorMessage.innerText = "Unable to load weather";
+    errorMessage.innerText = "Unable to\nload weather";
 
     errorMessage.parentElement.append(error);
 }
