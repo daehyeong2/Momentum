@@ -9,10 +9,24 @@
 </head>
 
 <body>
+    <span id="date">0000년 00월 00일</span>
     <div id="weather">
-        <span><i class="fa-solid fa-spinner fa-spin-pulse"></i></span>
-        <span>Loading...</span>
+        <div id="error">
+            <span></span>
+        </div>
+        <div id="loading">
+            <span><i class="fa-solid fa-spinner fa-spin-pulse"></i>Loading...</span>
+        </div>
+        <div id="weather__info">
+            <img id="icon"/>
+            <div>
+                <span id="city"></span>
+                <span id="temp"></span>
+            </div>
+        </div>
     </div>
+
+    <div id="weather__background"></div>
 
     <div id="main">
         <form id="login-form" class="hidden">
@@ -33,10 +47,6 @@
         <ul id="todo-list"></ul>
     </div>
     <div id="quote">
-        <span></span>
-        <span></span>
-    </div>
-    <div id="weather">
         <span></span>
         <span></span>
     </div>

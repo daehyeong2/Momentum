@@ -1,4 +1,5 @@
 const API_KEY = "3b40d96bdcb220607a623e1bd416499e";
+const loading = document.getElementById("loading");
 
 function onGeoOk(position){
     const lat = position.coords.latitude;
@@ -7,22 +8,27 @@ function onGeoOk(position){
     fetch(url)
         .then(response => response.json()
         .then(data => {
-            const weather = document.querySelector("#weather span:first-child");
-            const city = document.querySelector("#weather span:last-child");
+            const weather__info = document.getElementById("weather__info");
+            const icon = document.getElementById("icon");
+            const city = document.getElementById("city");
+            const temp = document.getElementById("temp");
+            loading.remove();
+
+            weather__info.classList.add("box");
+            icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
             city.innerText = data.name;
-            weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
+            temp.innerText = `${data.main.temp}°C`;
         }));
 }
 function onGeoError(){
-    const weather = document.querySelector("#weather span:first-child");
-    const city = document.querySelector("#weather span:last-child");
+    const errorMessage = document.querySelector("#error span");
     const error = document.createElement("i");
     error.className = "fa-solid fa-triangle-exclamation";
+    loading.remove();
 
-    weather.innerText = "Unable to load weather";
+    errorMessage.innerText = "Unable to load weather";
 
-    city.innerText = "";
-    city.append(error);
+    errorMessage.parentElement.append(error);
 }
 
 navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
