@@ -15,7 +15,7 @@ function paintBackgroundImage(){
     if(localStorage.getItem(CURRENTBACKGROUND__KEY)===null){
         localStorage.setItem(CURRENTBACKGROUND__KEY, 0);
     }
-    chosenNumber = (Number(localStorage.getItem(CURRENTBACKGROUND__KEY))+1)%images.length;
+    const chosenNumber = (Number(localStorage.getItem(CURRENTBACKGROUND__KEY))+1)%images.length;
     localStorage.setItem(CURRENTBACKGROUND__KEY, chosenNumber)
     const chosenImage = images[chosenNumber];
     const body = document.querySelector("body");
@@ -36,7 +36,7 @@ function BackgrondLockHandler(){
     if(localStorage.getItem(BACKGROUNDLOCK__KEY)==="false"){
         BgLockButton.title = "Click to unlock the current background";
         BgLockButton.classList.add("allow");
-        localStorage.setItem(BACKGROUNDLOCK__KEY, chosenNumber);
+        localStorage.setItem(BACKGROUNDLOCK__KEY, localStorage.getItem(CURRENTBACKGROUND__KEY));
     } else {
         BgLockButton.title = "Click to lock the current background";
         BgLockButton.classList.remove("allow");
