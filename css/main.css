@@ -18,7 +18,7 @@
 }
 #greeting{
     font-size: 60px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 #greeting span{
     display: inline-block;
@@ -34,9 +34,11 @@
 }
 @keyframes FadeInClock{
     from{
+        transform: translateX(-30px);
         opacity: 0;
     }
     to{
+        transform: none;
         opacity: 1;
     }
 }
@@ -45,12 +47,30 @@
     font-size: 50px;
     font-family: 'Hahmlet', serif;
     text-shadow: -1px 0px lightgrey, 0px 1px lightgrey, 1px 0px lightgrey, 0px -1px lightgrey;
-    animation: FadeInClock 1.5s ease-in-out;
+    animation: FadeInClock .6s ease-in-out;
+}
+@keyframes FadeInButtons{
+    from{
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to{
+        transform: none;
+        opacity: 1;
+    }
 }
 #buttons{
     position: absolute;
     right: 10px;
     bottom: 10px;
+}
+#buttons button:first-child{
+    animation: FadeInButtons .4s ease-in-out forwards;
+}
+#buttons button:last-child{
+    opacity: 0;
+    animation: FadeInButtons .4s ease-in-out forwards;
+    animation-delay: .03s;
 }
 #buttons button{
     border-radius: 50%;
@@ -77,4 +97,93 @@
     100%{
         transform: none;
     }
-  }
+}
+@keyframes FadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+#todo-form{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    animation: FadeIn .8s ease-in-out;
+}
+#todo-form input::placeholder{
+    transition: color .3s ease-in-out;
+    color: black;
+}
+#todo-form input{
+    border-radius: 10px;
+    transition: all .3s ease-in-out;
+    text-align: center;
+    font-size: 24px;
+    background: none;
+    border: none;
+}
+#todo-form input:hover{
+    background-color: rgba(0,0,0,0.1);
+}
+#todo-form input:focus-visible{
+    color: white;
+    outline: none;
+    background-color: rgba(0,0,0,0.15);
+}
+#todo-form input:focus-visible::placeholder{
+    color: white;
+}
+@keyframes FadeInToDoList{
+    from{
+        transform: translateY(15px);
+        opacity: 0;
+    }
+    to{
+        transform: none;
+        opacity: 1;
+    }
+}
+#todo-list{
+    overflow: auto;
+    position: absolute;
+    width: 200px;
+    height: 230px;
+    bottom: 80px;
+    list-style: none;
+    padding: 0px 5px;
+    animation: FadeInToDoList .65s ease-in-out;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 25px;
+    padding: 10px;
+}
+#todo-list li{
+    transition: all .1s ease-in-out;
+    display: flex;
+    justify-content:space-between;
+    padding-left: 5px;
+}
+#todo-list li div button i{
+    width: 15px;
+    height: 15px;
+}
+#todo-list li div button:first-child{
+    color: green;
+    background: none;
+    border: none;
+}
+#todo-list li div button:last-child{
+    color: red;
+    background: none;
+    border: none;
+}
+.complete{
+    text-decoration-line: line-through;
+    color: grey;
+    text-decoration-color: black;
+}
+#todo-list li:hover{
+    background-color: rgba(0,0,0,0.04);
+    border-radius: 5px;
+    scale: 1.05;
+}

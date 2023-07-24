@@ -3,6 +3,9 @@
 @import "quote.css";
 @import "date.css";
 
+::-webkit-scrollbar {
+    display: none;
+}
 
 html, body{
     margin: 0;
