@@ -124,12 +124,12 @@
     border: none;
 }
 #todo-form input:hover{
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0,0,0,0.05);
 }
 #todo-form input:focus-visible{
     color: white;
     outline: none;
-    background-color: rgba(0,0,0,0.15);
+    background-color: rgba(0,0,0,0.1);
 }
 #todo-form input:focus-visible::placeholder{
     color: white;
