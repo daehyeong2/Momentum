@@ -187,3 +187,19 @@
     border-radius: 5px;
     scale: 1.05;
 }
+#login-form input{
+    font-size: 30px;
+    background: none;
+    outline: none;
+    border: none;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    transition: all .3s ease-in-out;
+}
+#login-form input:focus-visible{
+    background-color: rgba(0,0,0,0.05);
+}
+.hiddenUl{
+    opacity: 0;
+}

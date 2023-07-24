@@ -20,6 +20,9 @@ function deleteToDo(event){
     li.remove();
     toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
     saveToDos()
+    if(toDos.length===0){
+        toDoList.classList.add("hidden");
+    }
 }
 
 function completeToDo(event){
@@ -67,6 +70,7 @@ function paintToDo(newTodo){
     li.appendChild(span);
     li.appendChild(buttons);
     toDoList.appendChild(li);
+    toDoList.classList.remove("hidden");
 }
 
 

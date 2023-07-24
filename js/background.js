@@ -6,12 +6,11 @@ const CURRENTBACKGROUND__KEY = "currentBackground";
 const images = [ 
     "0.jpg",
     "1.jpg",
-    "2.jpg"
 ]
 
 function paintBackgroundImage(){
     if(localStorage.getItem(CURRENTBACKGROUND__KEY)===null){
-        localStorage.setItem(CURRENTBACKGROUND__KEY, 0);
+        localStorage.setItem(CURRENTBACKGROUND__KEY, -1);
     }
     const chosenNumber = (Number(localStorage.getItem(CURRENTBACKGROUND__KEY))+1)%images.length;
     localStorage.setItem(CURRENTBACKGROUND__KEY, chosenNumber)
@@ -43,12 +42,6 @@ function BackgrondLockHandler(){
     
 }
 
-if(localStorage.getItem(BACKGROUNDLOCK__KEY)==="false"){
-    paintBackgroundImage();
-}
-
-BgRefreshButton.addEventListener("click", paintBackgroundHandler);
-
 if(localStorage.getItem(BACKGROUNDLOCK__KEY)===null){
     localStorage.setItem(BACKGROUNDLOCK__KEY, "false");
 } else if(localStorage.getItem(BACKGROUNDLOCK__KEY)!="false"){
@@ -59,5 +52,11 @@ if(localStorage.getItem(BACKGROUNDLOCK__KEY)===null){
 
     body.style.backgroundImage = `url("img/${chosenImage}")`;
 }
+
+if(localStorage.getItem(BACKGROUNDLOCK__KEY)==="false"){
+    paintBackgroundImage();
+}
+
+BgRefreshButton.addEventListener("click", paintBackgroundHandler);
 
 BgLockButton.addEventListener("click", BackgrondLockHandler);
